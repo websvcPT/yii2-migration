@@ -16,7 +16,7 @@ use websvc\yii2migration\table\TableColumnInt;
 use websvc\yii2migration\table\TableColumnSmallInt;
 use websvc\yii2migration\table\TableColumnString;
 use websvc\yii2migration\table\TableColumnTinyInt;
-use bizley\tests\cases\GeneratorColumnsTestCase;
+use websvc\tests\cases\GeneratorColumnsTestCase;
 use Yii;
 use yii\db\mysql\Schema;
 
