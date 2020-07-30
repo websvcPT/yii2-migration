@@ -1,8 +1,8 @@
 # yii2-migration
 
-![Latest Stable Version](https://img.shields.io/packagist/v/websvc/yii2migration.svg)
-[![Total Downloads](https://img.shields.io/packagist/dt/websvc/yii2migration.svg)](https://packagist.org/packages/websvc/yii2migration)
-![License](https://img.shields.io/packagist/l/websvc/yii2migration.svg)
+![Latest Version](https://img.shields.io/packagist/v/websvc/yii2migration?style=plastic)
+![Total Downloads](https://img.shields.io/packagist/dt/websvc/yii2migration?style=plastic)
+![License](https://img.shields.io/packagist/l/websvc/yii2migration?style=plastic)
 
 ## Disclaimer
 
