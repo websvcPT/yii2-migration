@@ -83,14 +83,14 @@ class MigrationController extends Controller
      * This can be either a path alias (e.g. "@app/migrations/template.php") or a file path.
      * @changed 3.7.0
      */
-    public $templateFile = '@websvc\yii2migration/views/create_migration.php';
+    public $templateFile = '@websvc/yii2migration/views/create_migration.php';
 
     /**
      * @var string Template file for generating updating migrations.
      * This can be either a path alias (e.g. "@app/migrations/template.php") or a file path.
      * @changed 3.7.0
      */
-    public $templateFileUpdate = '@websvc\yii2migration/views/update_migration.php';
+    public $templateFileUpdate = '@websvc/yii2migration/views/update_migration.php';
 
     /**
      * @var bool|string|int Whether the table names generated should consider the $tablePrefix setting of the DB
@@ -174,7 +174,7 @@ class MigrationController extends Controller
      * @since 3.4.0
      * @changed 3.7.0
      */
-    public $templateFileForeignKey = '@websvc\yii2migration/views/create_fk_migration.php';
+    public $templateFileForeignKey = '@websvc/yii2migration/views/create_fk_migration.php';
 
     /**
      * {@inheritdoc}
