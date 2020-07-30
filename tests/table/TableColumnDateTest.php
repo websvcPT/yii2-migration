@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace bizley\tests\table;
 
-use bizley\migration\table\TableColumnDate;
+use websvc\yii2migration\table\TableColumnDate;
 use bizley\tests\cases\TableColumnTestCase;
 
 class TableColumnDateTest extends TableColumnTestCase

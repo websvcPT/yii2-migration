@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace bizley\tests\pgsql;
 
-use bizley\migration\Generator;
-use bizley\migration\table\TableColumnBigInt;
-use bizley\migration\table\TableColumnBoolean;
-use bizley\migration\table\TableColumnChar;
-use bizley\migration\table\TableColumnDecimal;
-use bizley\migration\table\TableColumnDouble;
-use bizley\migration\table\TableColumnInt;
-use bizley\migration\table\TableColumnJson;
-use bizley\migration\table\TableColumnSmallInt;
-use bizley\migration\table\TableColumnString;
-use bizley\migration\table\TableColumnTimestamp;
+use websvc\yii2migration\Generator;
+use websvc\yii2migration\table\TableColumnBigInt;
+use websvc\yii2migration\table\TableColumnBoolean;
+use websvc\yii2migration\table\TableColumnChar;
+use websvc\yii2migration\table\TableColumnDecimal;
+use websvc\yii2migration\table\TableColumnDouble;
+use websvc\yii2migration\table\TableColumnInt;
+use websvc\yii2migration\table\TableColumnJson;
+use websvc\yii2migration\table\TableColumnSmallInt;
+use websvc\yii2migration\table\TableColumnString;
+use websvc\yii2migration\table\TableColumnTimestamp;
 use bizley\tests\cases\GeneratorColumnsTestCase;
 use Yii;
 use yii\db\pgsql\Schema;

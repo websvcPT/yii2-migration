@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration\table;
+namespace websvc\yii2migration\table;
 
 use yii\base\InvalidArgumentException;
 use yii\helpers\Json;
@@ -10,7 +10,7 @@ use function is_array;
 
 /**
  * Class TableColumnJson
- * @package bizley\migration\table
+ * @package websvc\yii2migration\table
  */
 class TableColumnJson extends TableColumn
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration\table;
+namespace websvc\yii2migration\table;
 
 /**
  * Class TableColumnUPK
- * @package bizley\migration\table
+ * @package websvc\yii2migration\table
  */
 class TableColumnUPK extends TableColumnPK
 {

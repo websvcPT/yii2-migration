@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration\table;
+namespace websvc\yii2migration\table;
 
 use function in_array;
 
 /**
  * Class TableColumnBinary
- * @package bizley\migration\table
+ * @package websvc\yii2migration\table
  */
 class TableColumnBinary extends TableColumn
 {

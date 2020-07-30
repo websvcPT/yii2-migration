@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration\table;
+namespace websvc\yii2migration\table;
 
 use function in_array;
 
 /**
  * Class TableColumnBigInt
- * @package bizley\migration\table
+ * @package websvc\yii2migration\table
  */
 class TableColumnBigInt extends TableColumn
 {

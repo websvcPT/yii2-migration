@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace bizley\tests\cases;
 
-use bizley\migration\controllers\MigrationController;
+use websvc\yii2migration\controllers\MigrationController;
 use bizley\tests\controllers\EchoMigrateController;
 use PHPUnit\Framework\TestCase;
 use Yii;

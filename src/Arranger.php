@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration;
+namespace websvc\yii2migration;
 
 use yii\base\Component;
 use yii\base\InvalidConfigException;
@@ -15,7 +15,7 @@ use function count;
 
 /**
  * Class Arranger
- * @package bizley\migration
+ * @package websvc\yii2migration
  * @since 3.4.0
  */
 class Arranger extends Component

@@ -1,5 +1,5 @@
 {
-  "name": "bizley/migration",
+  "name": "websvc/yii2migration",
   "description": "Migration generator for Yii 2.",
   "type": "yii2-extension",
   "keywords": ["yii2", "migration", "migrate", "generator", "console", "updater"],
@@ -8,10 +8,14 @@
     {
       "name": "Paweł Bizley Brzozowski",
       "email": "pawel@positive.codes"
+    },
+    {
+      "name": "WebSvcPT",
+      "email": "websvcPT@github.io"
     }
   ],
   "support": {
-    "source": "https://github.com/bizley/yii2-migration"
+    "source": "https://github.com/websvcPT/yii2-migration"
   },
   "require": {
     "php": ">=7.1.0",
@@ -24,12 +28,12 @@
   },
   "autoload": {
     "psr-4": {
-      "bizley\\migration\\": "src/"
+      "websvc\\yii2migration\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "bizley\\tests\\": "tests/"
+      "websvc\\tests\\": "tests/"
     }
   },
   "repositories": [

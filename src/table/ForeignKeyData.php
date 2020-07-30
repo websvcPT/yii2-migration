@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration\table;
+namespace websvc\yii2migration\table;
 
 use yii\base\BaseObject;
 use function count;
@@ -15,7 +15,7 @@ use function substr;
 
 /**
  * Class ForeignKeyData
- * @package bizley\migration\table
+ * @package websvc\yii2migration\table
  * @since 3.4.0
  */
 class ForeignKeyData extends BaseObject

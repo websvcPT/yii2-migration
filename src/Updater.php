@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration;
+namespace websvc\yii2migration;
 
-use bizley\migration\table\TableChange;
-use bizley\migration\table\TableColumn;
-use bizley\migration\table\TablePlan;
-use bizley\migration\table\TablePrimaryKey;
-use bizley\migration\table\TableStructure;
+use websvc\yii2migration\table\TableChange;
+use websvc\yii2migration\table\TableColumn;
+use websvc\yii2migration\table\TablePlan;
+use websvc\yii2migration\table\TablePrimaryKey;
+use websvc\yii2migration\table\TableStructure;
 use Yii;
 use yii\base\ErrorException;
 use yii\base\InvalidArgumentException;
@@ -37,7 +37,7 @@ use function usort;
 
 /**
  * Class Updater
- * @package bizley\migration
+ * @package websvc\yii2migration
  *
  * @property-read TableStructure $oldTable
  * @property TablePlan $plan
@@ -94,11 +94,12 @@ class Updater extends Generator
 
     /**
      * Sets dummy Migration class.
+     * Changed 3.7.0
      * @throws InvalidArgumentException
      */
     protected function setDummyMigrationClass(): void
     {
-        Yii::$classMap['yii\db\Migration'] = Yii::getAlias('@bizley/migration/dummy/Migration.php');
+        Yii::$classMap['yii\db\Migration'] = Yii::getAlias('@websvc/yii2migration/dummy/Migration.php');
     }
 
     /**

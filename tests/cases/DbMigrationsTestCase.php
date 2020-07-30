@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace bizley\tests\cases;
 
-use bizley\migration\Updater;
+use websvc\yii2migration\Updater;
 use bizley\tests\migrations\m180317_093600_create_table_test_columns;
 use bizley\tests\migrations\m180322_212600_create_table_test_pk;
 use bizley\tests\migrations\m180322_213900_create_table_test_pk_composite;

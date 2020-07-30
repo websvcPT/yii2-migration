@@ -1,9 +1,21 @@
 # yii2-migration
 
-![Latest Stable Version](https://img.shields.io/packagist/v/bizley/migration.svg)
-[![Total Downloads](https://img.shields.io/packagist/dt/bizley/migration.svg)](https://packagist.org/packages/bizley/migration)
-![License](https://img.shields.io/packagist/l/bizley/migration.svg)
-[![Build Status](https://travis-ci.org/bizley/yii2-migration.svg?branch=master)](https://travis-ci.org/bizley/yii2-migration)
+![Latest Stable Version](https://img.shields.io/packagist/v/websvc/yii2migration.svg)
+[![Total Downloads](https://img.shields.io/packagist/dt/websvc/yii2migration.svg)](https://packagist.org/packages/websvc/yii2migration)
+![License](https://img.shields.io/packagist/l/websvc/yii2migration.svg)
+
+## Disclaimer
+
+This is a fork of https://github.com/bizley/yii2-migration - All credits to Bizley!
+
+This is mostly for self use, and the work here is based on branch 3.x on top of version 3.6.5
+
+Changes here add init() function to templates in order to specify the DB connection to use when executing migrations.   
+This allows to use the default Yii migration tool without specifying DB connection in command
+
+What's tested
+
+Methods: create and create-all
 
 ## Migration creator and updater
 
@@ -15,11 +27,11 @@ Add the package to your composer.json:
 
     {
         "require": {
-            "bizley/migration": "^3.6"
+            "websvc/yii2migration": "^3.7"
         }
     }
 
-and run `composer update` or alternatively run `composer require bizley/migration:^3.6`
+and run `composer update` or alternatively run `composer require websvc/yii2migration:^3.7`
 
 ## Other versions
 
@@ -37,7 +49,7 @@ Add the following in your configuration file (preferably console configuration f
     ],
     'controllerMap' => [
         'migration' => [
-            'class' => 'bizley\migration\controllers\MigrationController',
+            'class' => 'websvc\yii2migration\controllers\MigrationController',
         ],
     ],
 
@@ -93,8 +105,8 @@ Starting with yii2-migration v2.0 it is possible to generate updating migration 
 | `db`                     |       | Application component's ID of the DB connection to use when generating migrations. _default:_ `'db'`
 | `migrationPath`          | `p`   | Directory storing the migration classes. _default:_ `'@app/migrations'`
 | `migrationNamespace`     | `n`   | Namespace in case of generating namespaced migration. _default:_ `null`
-| `templateFile`           | `F`   | Template file for generating create migrations. _default:_ `'@bizley/migration/views/create_migration.php'`
-| `templateFileUpdate`     | `U`   | Template file for generating update migrations. _default:_ `'@bizley/migration/views/update_migration.php'`
+| `templateFile`           | `F`   | Template file for generating create migrations. _default:_ `'@websvc/yii2migration/views/create_migration.php'`
+| `templateFileUpdate`     | `U`   | Template file for generating update migrations. _default:_ `'@websvc/yii2migration/views/update_migration.php'`
 | `useTablePrefix`         | `P`   | Whether the table names generated should consider the `tablePrefix` setting of the DB connection. _default:_ `1`
 | `migrationTable`         | `t`   | Name of the table for keeping applied migration information. _default:_ `'{{%migration}}'`
 | `showOnly`               | `s`   | Whether to only display changes instead of generating update migration. _default:_ `0`
@@ -104,7 +116,7 @@ Starting with yii2-migration v2.0 it is possible to generate updating migration 
 | `tableOptionsInit`       | `O`   | String rendered in the create migration template to initialize table options. _default:_ `$tableOptions = null; if ($this->db->driverName === 'mysql') { $tableOptions = 'CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE=InnoDB'; }`
 | `tableOptions`           | `o`   | String rendered in the create migration template for table options. _default:_ `$tableOptions`
 | `excludeTables`          |       | List of tables that should be skipped for *-all actions. _default:_ `[]`
-| `templateFileForeignKey` | `K`   | Template file for generating create foreign keys migrations. _default:_ `'@bizley/migration/views/create_fk_migration.php'`
+| `templateFileForeignKey` | `K`   | Template file for generating create foreign keys migrations. _default:_ `'@websvc/yii2migration/views/create_fk_migration.php'`
 
 [1] Remember that with different database types general column schemas may be generated with different length.
 

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace bizley\tests\cases;
 
-use bizley\migration\Generator;
-use bizley\migration\table\TableColumnBinary;
-use bizley\migration\table\TableColumnDate;
-use bizley\migration\table\TableColumnText;
-use bizley\migration\table\TableColumnTime;
-use bizley\migration\table\TableColumnTimestamp;
+use websvc\yii2migration\Generator;
+use websvc\yii2migration\table\TableColumnBinary;
+use websvc\yii2migration\table\TableColumnDate;
+use websvc\yii2migration\table\TableColumnText;
+use websvc\yii2migration\table\TableColumnTime;
+use websvc\yii2migration\table\TableColumnTimestamp;
 use Yii;
 use yii\db\Schema;
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace bizley\tests\arranger;
 
-use bizley\migration\Arranger;
+use websvc\yii2migration\Arranger;
 use PHPUnit\Framework\TestCase;
 use yii\db\Connection;
 

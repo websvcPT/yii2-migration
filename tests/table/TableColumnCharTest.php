@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace bizley\tests\table;
 
-use bizley\migration\table\TableColumnChar;
+use websvc\yii2migration\table\TableColumnChar;
 use bizley\tests\cases\TableColumnTestCase;
 
 class TableColumnCharTest extends TableColumnTestCase

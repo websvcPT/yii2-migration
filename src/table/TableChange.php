@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration\table;
+namespace websvc\yii2migration\table;
 
 use yii\base\BaseObject;
 use yii\base\InvalidConfigException;
@@ -10,7 +10,7 @@ use yii\db\Connection;
 
 /**
  * Class TableChange
- * @package bizley\migration\table
+ * @package websvc\yii2migration\table
  *
  * @property-read array|string|TableColumn|TablePrimaryKey|TableForeignKey|TableIndex $value
  */

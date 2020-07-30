@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace bizley\tests\table;
 
-use bizley\migration\table\TableColumnTinyInt;
-use bizley\migration\table\TableStructure;
+use websvc\yii2migration\table\TableColumnTinyInt;
+use websvc\yii2migration\table\TableStructure;
 use bizley\tests\cases\TableColumnTestCase;
 
 class TableColumnTinyIntTest extends TableColumnTestCase

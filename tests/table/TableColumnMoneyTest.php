@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace bizley\tests\table;
 
-use bizley\migration\table\TableColumnMoney;
+use websvc\yii2migrationtion\table\TableColumnMoney;
 use bizley\tests\cases\TableColumnTestCase;
 
 class TableColumnMoneyTest extends TableColumnTestCase

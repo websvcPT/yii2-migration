@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration;
+namespace websvc\yii2migration;
 
-use bizley\migration\table\ForeignKeyData;
-use bizley\migration\table\TableColumn;
-use bizley\migration\table\TableColumnFactory;
-use bizley\migration\table\TableForeignKey;
-use bizley\migration\table\TableIndex;
-use bizley\migration\table\TablePrimaryKey;
-use bizley\migration\table\TableStructure;
+use websvc\yii2migration\table\ForeignKeyData;
+use websvc\yii2migration\table\TableColumn;
+use websvc\yii2migration\table\TableColumnFactory;
+use websvc\yii2migration\table\TableForeignKey;
+use websvc\yii2migration\table\TableIndex;
+use websvc\yii2migration\table\TablePrimaryKey;
+use websvc\yii2migration\table\TableStructure;
 use PDO;
 use Throwable;
 use Yii;
@@ -31,7 +31,7 @@ use function is_array;
 
 /**
  * Class Generator
- * @package bizley\migration
+ * @package websvc\yii2migration
  *
  * @property TableSchema $tableSchema
  * @property array $structure
@@ -44,6 +44,12 @@ class Generator extends Component
      * @var Connection DB connection.
      */
     public $db;
+
+    /**
+     * @var DB connection name.
+     * Since 3.7.0
+     */
+    public $dbConName;
 
     /**
      * @var string Table name to be generated (before prefix).
@@ -327,6 +333,7 @@ class Generator extends Component
 
     /**
      * Generates migration content or echoes exception message.
+     * Changed 3.7.0
      * @return string
      */
     public function generateMigration(): string
@@ -334,7 +341,8 @@ class Generator extends Component
         return $this->view->renderFile(Yii::getAlias($this->templateFile), [
             'table' => $this->table,
             'className' => $this->className,
-            'namespace' => $this->normalizedNamespace
+            'namespace' => $this->normalizedNamespace,
+            'dbConName' => $this->dbConName,
         ]);
     }
 

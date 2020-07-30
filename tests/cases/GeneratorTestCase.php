@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace bizley\tests\cases;
 
-use bizley\migration\Generator;
+use websvc\yii2migration\Generator;
 use Yii;
 
 class GeneratorTestCase extends DbTestCase

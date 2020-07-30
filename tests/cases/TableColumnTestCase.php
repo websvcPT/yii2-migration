@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace bizley\tests\cases;
 
-use bizley\migration\table\TablePrimaryKey;
-use bizley\migration\table\TableStructure;
+use websvc\yii2migration\table\TablePrimaryKey;
+use websvc\yii2migration\table\TableStructure;
 use PHPUnit\Framework\TestCase;
 
 class TableColumnTestCase extends TestCase

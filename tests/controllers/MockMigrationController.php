@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace bizley\tests\controllers;
 
-use bizley\migration\controllers\MigrationController;
+use websvc\yii2migration\controllers\MigrationController;
 
 class MockMigrationController extends MigrationController
 {

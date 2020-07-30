@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration\table;
+namespace websvc\yii2migration\table;
 
 use function in_array;
 use function version_compare;
 
 /**
  * Class TableColumnTime
- * @package bizley\migration\table
+ * @package websvc\yii2migration\table
  */
 class TableColumnTime extends TableColumn
 {

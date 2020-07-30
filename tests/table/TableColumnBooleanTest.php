@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace bizley\tests\table;
 
-use bizley\migration\table\TableColumnBoolean;
+use websvc\yii2migration\table\TableColumnBoolean;
 use bizley\tests\cases\TableColumnTestCase;
 
 class TableColumnBooleanTest extends TableColumnTestCase

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace bizley\tests\table;
 
-use bizley\migration\table\TableColumnPK;
-use bizley\migration\table\TableStructure;
+use websvc\yii2migration\table\TableColumnPK;
+use websvc\yii2migration\table\TableStructure;
 use bizley\tests\cases\TableColumnTestCase;
 
 class TableColumnPKTest extends TableColumnTestCase

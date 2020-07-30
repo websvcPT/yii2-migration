@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration\controllers;
+namespace websvc\yii2migration\controllers;
 
-use bizley\migration\Arranger;
-use bizley\migration\Generator;
-use bizley\migration\table\TableStructure;
-use bizley\migration\Updater;
+use websvc\yii2migration\Arranger;
+use websvc\yii2migration\Generator;
+use websvc\yii2migration\table\TableStructure;
+use websvc\yii2migration\Updater;
 use Yii;
 use yii\base\Action;
 use yii\base\ErrorException;
@@ -81,14 +81,16 @@ class MigrationController extends Controller
     /**
      * @var string Template file for generating new migrations.
      * This can be either a path alias (e.g. "@app/migrations/template.php") or a file path.
+     * @changed 3.7.0
      */
-    public $templateFile = '@bizley/migration/views/create_migration.php';
+    public $templateFile = '@websvc\yii2migration/views/create_migration.php';
 
     /**
      * @var string Template file for generating updating migrations.
      * This can be either a path alias (e.g. "@app/migrations/template.php") or a file path.
+     * @changed 3.7.0
      */
-    public $templateFileUpdate = '@bizley/migration/views/update_migration.php';
+    public $templateFileUpdate = '@websvc\yii2migration/views/update_migration.php';
 
     /**
      * @var bool|string|int Whether the table names generated should consider the $tablePrefix setting of the DB
@@ -101,6 +103,12 @@ class MigrationController extends Controller
      * the DB connection to use when creating migrations.
      */
     public $db = 'db';
+
+    /**
+     * @var Connection|string DB connection name.
+     * @since 3.7.0
+     */
+    public $dbConName = 'db';
 
     /**
      * @var string Name of the table for keeping applied migration information.
@@ -164,11 +172,13 @@ class MigrationController extends Controller
      * @var string Template file for generating new foreign keys migrations.
      * This can be either a path alias (e.g. "@app/migrations/template.php") or a file path.
      * @since 3.4.0
+     * @changed 3.7.0
      */
-    public $templateFileForeignKey = '@bizley/migration/views/create_fk_migration.php';
+    public $templateFileForeignKey = '@websvc\yii2migration/views/create_fk_migration.php';
 
     /**
      * {@inheritdoc}
+     * @changed 3.7.0
      */
     public function options($actionID) // BC declaration
     {
@@ -185,6 +195,7 @@ class MigrationController extends Controller
             'tableOptionsInit',
             'tableOptions',
             'templateFileForeignKey',
+            'dbConName',
         ];
         $updateOptions = [
             'showOnly',
@@ -456,6 +467,7 @@ class MigrationController extends Controller
      * @return int
      * @throws DbException
      * @throws InvalidConfigException
+     * @changed 3.7.0
      */
     public function actionCreate(string $table): int
     {
@@ -519,6 +531,7 @@ class MigrationController extends Controller
                 'tableOptionsInit' => $this->tableOptionsInit,
                 'tableOptions' => $this->tableOptions,
                 'suppressForeignKey' => $suppressForeignKeys[$name] ?? [],
+                'dbConName' => $this->dbConName,
             ]);
 
             if ($generator->tableSchema === null) {
@@ -575,7 +588,8 @@ class MigrationController extends Controller
                         [
                             'fks' => $postponedForeignKeys,
                             'className' => $className,
-                            'namespace' => $this->migrationNamespace
+                            'namespace' => $this->migrationNamespace,
+                            'dbConName' => $this->dbConName
                         ]
                     )
                 ) === false
@@ -613,6 +627,7 @@ class MigrationController extends Controller
      * @throws DbException
      * @throws InvalidConfigException
      * @since 2.1
+     * @changed 3.7.0
      */
     public function actionCreateAll(): int
     {
@@ -669,6 +684,7 @@ class MigrationController extends Controller
                 'showOnly' => $this->showOnly,
                 'generalSchema' => $this->generalSchema,
                 'skipMigrations' => $this->skipMigrations,
+                'dbConName' => $this->dbConName,
             ]);
 
             if ($updater->tableSchema === null) {

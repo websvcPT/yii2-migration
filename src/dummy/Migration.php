@@ -2,8 +2,8 @@
 
 namespace yii\db;
 
-use bizley\migration\table\TableChange;
-use bizley\migration\table\TableStructure;
+use websvc\yii2migration\table\TableChange;
+use websvc\yii2migration\table\TableStructure;
 use ReflectionClass;
 use ReflectionException;
 use yii\base\Component;

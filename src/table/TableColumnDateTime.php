@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace bizley\migration\table;
+namespace websvc\yii2migration\table;
 
 use yii\db\Expression;
 
@@ -13,7 +13,7 @@ use function version_compare;
 
 /**
  * Class TableColumnDateTime
- * @package bizley\migration\table
+ * @package websvc\yii2migration\table
  */
 class TableColumnDateTime extends TableColumn
 {
