@@ -177,6 +177,12 @@ class MigrationController extends Controller
     public $templateFileForeignKey = '@websvc/yii2migration/views/create_fk_migration.php';
 
     /**
+     * @var string prefix for filenames.
+     * @since 3.7.3
+     */
+    public $filePrefix = 'm';
+
+    /**
      * {@inheritdoc}
      * @changed 3.7.0
      */
@@ -499,6 +505,9 @@ class MigrationController extends Controller
                 return ExitCode::DATAERR;
             }
         }
+        if ($this->migrationNamespace !== null) {
+            $this->filePrefix = "M";
+        }
 
         $postponedForeignKeys = [];
 
@@ -509,13 +518,17 @@ class MigrationController extends Controller
 
             if ($countTables > 1) {
                 $className = sprintf(
-                    "m%s_%0{$counterSize}d_create_table_%s",
-                    gmdate('ymd_His'),
+                    $this->filePrefix . "%s_%0{$counterSize}d_create_table_%s",
+                    gmdate('ymdHis'),
                     $migrationsGenerated + 1,
                     $name
                 );
             } else {
-                $className = sprintf('m%s_create_table_%s', gmdate('ymd_His'), $name);
+                $className = sprintf(
+                    $this->filePrefix . '%screate_table_%s',
+                    gmdate('ymdHis'),
+                    $name
+                );
             }
             $file = $this->workingPath . DIRECTORY_SEPARATOR . $className . '.php';
 
@@ -573,9 +586,10 @@ class MigrationController extends Controller
         if ($postponedForeignKeys) {
             $this->stdout(' > Generating create migration for foreign keys ...', Console::FG_YELLOW);
 
+
             $className = sprintf(
-                "m%s_%0{$counterSize}d_create_foreign_keys",
-                gmdate('ymd_His'),
+                $this->filePrefix . "%s_%0{$counterSize}d_create_foreign_keys",
+                gmdate('ymdHis'),
                 ++$migrationsGenerated
             );
             $file = $this->workingPath . DIRECTORY_SEPARATOR . $className . '.php';
@@ -667,7 +681,7 @@ class MigrationController extends Controller
         foreach ($tables as $name) {
             $this->stdout(" > Generating update migration for table '{$name}' ...", Console::FG_YELLOW);
 
-            $className = 'm' . gmdate('ymd_His') . '_update_table_' . $name;
+            $className = $this->filePrefix . gmdate('ymdHis') . '_update_table_' . $name;
             $file = $this->workingPath . DIRECTORY_SEPARATOR . $className . '.php';
 
             $updater = new Updater([
